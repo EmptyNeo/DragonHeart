@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e7b883da4b21d44b3130736c5447ec, type: 3}
+  m_Name: Sword
+  m_EditorClassIdentifier: 
+  _name_item: "\u0421\u0435\u0440\u0435\u0431\u0440\u044F\u043D\u043D\u044B\u0439
+    \u041C\u0435\u0447"
+  _maximum_amount: 1
+  _count: 1
+  _price: 10
+  _coin: 1
+  _item_prefab: {fileID: 875209423555608728, guid: fccbba313fe88e44cb2507c3feec5a25, type: 3}
+  _icon: {fileID: 21300000, guid: 6948410d0a18f2340a3ace917469d6a9, type: 3}
+  _type: 2
+  _type_in_inventory: 0
+  _main_item: {fileID: 0}
+  _weapon_item: {fileID: 11400000}
+  _armor_item: {fileID: 0}
+  damage: 7.5
+  delay: 0.2
+  _type_characteristic: 0
+  _necessary_characteristic: 3

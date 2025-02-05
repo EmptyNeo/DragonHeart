@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e7b883da4b21d44b3130736c5447ec, type: 3}
+  m_Name: Magic Sword
+  m_EditorClassIdentifier: 
+  _name_item: "\u041C\u0430\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0439 \u041C\u0435\u0447"
+  _maximum_amount: 1
+  _count: 0
+  _price: 0
+  _coin: 0
+  _item_prefab: {fileID: 875209423555608728, guid: d59155caad1ee174d89064abfa4f78cc, type: 3}
+  _icon: {fileID: 21300000, guid: 86ab020cdba57994cbdc17c103b6ba26, type: 3}
+  _type: 2
+  _type_in_inventory: 0
+  _main_item: {fileID: 0}
+  _weapon_item: {fileID: 11400000}
+  _armor_item: {fileID: 0}
+  damage: 10
+  delay: 0.25
+  necessary_strength: 3

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f0d0dcf69ba0a40a820dbdb8c57f25, type: 3}
+  m_Name: Skin Helmet 2
+  m_EditorClassIdentifier: 
+  _name_item: "\u041A\u043E\u0436\u0430\u043D\u043D\u044B\u0439 \u0428\u043B\u0435\u043C"
+  _name_ability: 
+  _maximum_amount: 1
+  _count: 0
+  _price: 0
+  _coin: 0
+  _item_prefab: {fileID: 2598389651438629783, guid: b026413b61129c2418feb5ccb429076b, type: 3}
+  _icon: {fileID: 21300000, guid: 8bc021ea3b8e2324aaf625d5c71d45a9, type: 3}
+  _type: 4
+  _type_in_inventory: 2
+  _main_item: {fileID: 0}
+  _weapon_item: {fileID: 0}
+  _armor_item: {fileID: 11400000}
+  _type_armor: 0
+  _physical_protection: 3
+  _magic_protection: 1
+  _armor:
+  - {fileID: 21300000, guid: ec70a129eec936d42a8b16379da26a45, type: 3}
+  - {fileID: 21300000, guid: 3380cc0e60a636641a66db98582b2215, type: 3}
+  - {fileID: 21300000, guid: 273a1ceeec739fa4c9c8ca0472b7d789, type: 3}
+  - {fileID: 21300000, guid: 7736933224b6e9142881b43f2225a2f1, type: 3}
