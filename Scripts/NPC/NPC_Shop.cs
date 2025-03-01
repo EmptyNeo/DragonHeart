@@ -7,6 +7,7 @@ public class NPC_Shop : NPCAdditionalPanel
     [SerializeField] private ItemScriptableObject[] items;
     [SerializeField] private GameObject _button;
     private PanelBuyItem _panel_buy_item;
+    
     private void AddButton()
     {
         if (PanelAdditional.TryGetComponent(out PanelBuyItem item))

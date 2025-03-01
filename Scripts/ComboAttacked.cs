@@ -12,7 +12,7 @@ public abstract class ComboAttacked : Near
         private set => _amount_click = value;   
 
     }
-    public int AmountCombo { get => _amount_combo; }
+    public int AmountCombo  => _amount_combo; 
     public virtual void AddAmountClick()
     {
         if(_amount_click + 1 < _amount_combo) 

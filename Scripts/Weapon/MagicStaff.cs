@@ -15,7 +15,7 @@ public class MagicStaff : Magic
     {
         if (MagicAbility == null)
         {
-            Notification.Instance.SetNotification("���������� �����������");
+            Notification.Instance.SetNotification("Экипируйте магию");
             Notification.Instance.TurnBackground(true);
             StartCoroutine(Notification.Instance.TurnOffBackgroundOverTime(3));
         }

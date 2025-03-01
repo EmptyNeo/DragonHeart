@@ -55,13 +55,14 @@ public class Inventory : MonoBehaviour
             {
                 AddItem(items[i].ItemObject, items[i].Amount);
                 _complete_quest.UpdateQuest(items[i].ItemObject, items[i].Amount);
-                _info_take_item.AddItemInList(items[i].ItemObject.Icon, items[i].ItemObject.NameItem, items[i].Amount);
+                _info_take_item.AddItemInList(items[i].ItemObject, items[i].Amount);
                 Destroy(items[i].gameObject);
             }
-            if(items.Count > 0)
+            if(_info_take_item.WasAnimationPlayed == false && items.Count > 0)
             {
                 _info_take_item.UpdateInfo();
                 _info_take_item.gameObject.SetActive(true);
+                _info_take_item.WasAnimationPlayed = true;
             }
         }
       
@@ -117,7 +118,7 @@ public class Inventory : MonoBehaviour
         }
         if (allFull)
         {
-            Notification.Instance.SetNotification("Инвентарь переполнен!");
+            Notification.Instance.SetNotification("РРЅРІРµРЅС‚Р°СЂСЊ Р·Р°РїРѕР»РЅРµРЅ!");
             Notification.Instance.TurnBackground(true);
             StartCoroutine(Notification.Instance.TurnOffBackgroundOverTime(3));
             Instantiate(_item.ItemPrefab, new Vector2(player.transform.position.x, player.transform.position.y), Quaternion.identity).GetComponent<Item>().Initialization(_amount);

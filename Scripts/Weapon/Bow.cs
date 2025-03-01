@@ -51,7 +51,7 @@ public class Bow : Distance
     {
         if (_amount_arrow - 1 < 0)
         {
-            Notification.Instance.SetNotification("��� ����� � �������");
+            Notification.Instance.SetNotification("Нет стрел в колчане");
             Notification.Instance.TurnBackground(true);
             StartCoroutine(Notification.Instance.TurnOffBackgroundOverTime(3));
         }

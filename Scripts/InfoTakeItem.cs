@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -9,22 +11,18 @@ public class InfoTakeItem : MonoBehaviour
     [SerializeField] private Image _icon;
     [SerializeField] private TextMeshProUGUI _name;
     [SerializeField] private TextMeshProUGUI _amount;
-
-    [SerializeField] private List<Sprite> _item_icon;
-    [SerializeField] private List<string> _name_item;
-    [SerializeField] private List<int> _item_amount;
-
-    [SerializeField] private int _length_item;
-
-    public void AddItemInList(Sprite icon, string name_item, int amount)
+    [SerializeField] private List<ItemsInfo> _items = new();
+    public bool WasAnimationPlayed;
+    public void AddItemInList(ItemScriptableObject item, int amount)
     {
         try
         {
-            _item_icon.Add(icon);
-            _name_item.Add(name_item);
-            _item_amount.Add(amount);
-            _length_item++;
-            
+            ItemsInfo itemInfo = new ItemsInfo()
+            {
+                Item = item,
+                Amount = amount
+            };
+            _items.Add(itemInfo);
         }
         catch
         {
@@ -35,22 +33,41 @@ public class InfoTakeItem : MonoBehaviour
 
     public void UpdateInfoInAnimator()
     {
-        _length_item--;
-        if(_length_item >= 0){
+        if(_items.Count > 0){
             UpdateInfo();
         }
         else {
             gameObject.SetActive(false);
-            _item_icon.Clear();
-            _name_item.Clear();
-            _item_amount.Clear();
-            _length_item = -1;
+            _items.Clear();
+            WasAnimationPlayed = false;
         }
     }
     public void UpdateInfo()
     {
-        _icon.sprite = _item_icon[_length_item];
-        _name.text = _name_item[_length_item];
-        _amount.text = "x" + _item_amount[_length_item];
+        _icon.sprite = _items[^1].Item.Icon;
+        _name.text = _items[^1].Item.NameItem;
+        _amount.text = "x" + _items[^1].Amount;
+        _items.Remove(_items[^1]);
+    }
+    [Serializable]
+    struct ItemsInfo : IEquatable<ItemsInfo>
+    {
+        public ItemScriptableObject Item;
+        public int Amount;
+
+        public bool Equals(ItemsInfo other)
+        {
+            return Equals(Item, other.Item) && Amount == other.Amount;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is ItemsInfo other && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Item, Amount);
+        }
     }
 }

@@ -33,7 +33,7 @@ public class PanelBuyItem : MonoBehaviour
         }
         else
         {
-            Notification.Instance.SetNotification($"Не хватает {total_price - _wallet.Balance[index_coin]} {currency_code[index_coin]}");
+            Notification.Instance.SetNotification($"РќРµ С…РІР°С‚Р°РµС‚ {total_price - _wallet.Balance[index_coin]} {currency_code[index_coin]}");
             Notification.Instance.TurnBackground(true);
             StartCoroutine(Notification.Instance.TurnOffBackgroundOverTime(3));
         }
