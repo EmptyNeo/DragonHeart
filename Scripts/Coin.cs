@@ -23,6 +23,7 @@ public class Coin : Quantity
             _rb.linearVelocity = (Player.Transform.position - transform.position).normalized * _speed;
             if (Mathf.Abs((transform.position - Player.Transform.position).magnitude) < .1f)
             {
+                Sounds.Play(GameResources.Sounds.TakeMoney, 0.1f);
                 _wallet.Addition(_coin_id, _amount);
                 Destroy(gameObject);
             }

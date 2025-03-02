@@ -39,7 +39,7 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
                 if (i + 1 < 10 && Input.GetKeyDown((i + 1).ToString()))
                 {
                     ExchangeSlotData(_quick_slot_panel.GetChild(i).GetComponent<InventorySlot>());
-                    _info_item.InfoPanel.gameObject.SetActive(false);
+                    _info_item.Panel.gameObject.SetActive(false);
                     break;
                 }
             }
@@ -70,7 +70,7 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             _oldSlot.GetComponent<Image>().sprite = _change_sprite;
         if (_oldSlot.Item != null)
         {
-            _info_item.InfoPanel.gameObject.SetActive(true);
+            _info_item.Panel.gameObject.SetActive(true);
             _info_item.ShowItemInfo(_oldSlot.Item);
         }
     }
@@ -80,7 +80,7 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         if (_oldSlot.slotType == TypeSlot.Default)
             _oldSlot.GetComponent<Image>().sprite = _default_sprite;
 
-        _info_item.InfoPanel.gameObject.SetActive(false);
+        _info_item.Panel.gameObject.SetActive(false);
         _on_pointer_enter = false;
     }
 

@@ -17,7 +17,7 @@ public class PlayerDataSaveLoad : MonoBehaviour
     private PlayerData _player_data;
     private CharacteristicsData _characteristics_data;
     
-    public void Start()
+    public void Initialize()
     {
         _inventory.Initialization();
         LoadAmountSave();
@@ -47,8 +47,8 @@ public class PlayerDataSaveLoad : MonoBehaviour
             if (_button_quest_application.Content.GetChild(i).TryGetComponent(out QuestInfo quest_info))
                 quests_info[i] = quest_info;
         }
-        BinarySavingSystem.SaveQuestsData(quests_info, FindObjectsOfType<NPC_QUEST>(), _amount_save);
-        BinarySavingSystem.SaveItems(FindObjectsOfType<Item>(), FindObjectsOfType<Coin>(), _amount_save);
+        BinarySavingSystem.SaveQuestsData(quests_info, FindObjectsByType<NPC_QUEST>(FindObjectsSortMode.None), _amount_save);
+        BinarySavingSystem.SaveItems(FindObjectsByType<Item>(FindObjectsSortMode.None), FindObjectsByType<Coin>(FindObjectsSortMode.None), _amount_save);
     }
     public void ExitMenu() => SceneManager.LoadScene("Menu");
   
@@ -131,8 +131,8 @@ public class PlayerDataSaveLoad : MonoBehaviour
         ItemsData items_data = BinarySavingSystem.LoadItems(_amount_save);
         if(items_data != null)
         {
-            Item[] items = FindObjectsOfType<Item>();
-            Coin[] coins = FindObjectsOfType<Coin>();
+            Item[] items = FindObjectsByType<Item>(FindObjectsSortMode.None);
+            Coin[] coins = FindObjectsByType<Coin>(FindObjectsSortMode.None);
             for(int i = 0; i < items.Length; i++)
                 Destroy(items[i].gameObject);
             for(int i = 0; i < coins.Length; i++)
@@ -184,7 +184,7 @@ public class PlayerDataSaveLoad : MonoBehaviour
 
             }
             _button_quest_application.ChildCount = quest_data.ItemRewardNames.Length;
-            NPC_QUEST[] npc_quests = FindObjectsOfType<NPC_QUEST>();   
+            NPC_QUEST[] npc_quests = FindObjectsByType<NPC_QUEST>(FindObjectsSortMode.None);   
             for(int i = 0; i < quest_data.IndexQuestNpc.Length; i++)
             {
 

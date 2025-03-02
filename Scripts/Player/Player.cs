@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : Movement
 {
+    
+    
     [SerializeField] private Characteristics _characteristics;
     public static Transform Transform;
     private Vector2 _currentDirection = Vector2.right;
