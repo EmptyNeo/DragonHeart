@@ -130,7 +130,11 @@ public static class GameResources
     }
     public static class Sounds
     {
+        public static AudioClip StepPlayer1 => Resources.Load<AudioClip>("Sounds/StepPlayer1");
+        public static AudioClip StepPlayer2 => Resources.Load<AudioClip>("Sounds/StepPlayer2");
+        public static AudioClip StepPlayer3 => Resources.Load<AudioClip>("Sounds/StepPlayer3");
         public static AudioClip TakeMoney => Resources.Load<AudioClip>("Sounds/TakeMoney");
+        public static AudioClip WooshSword => Resources.Load<AudioClip>("Sounds/WooshSword");
     }
     public static class Tilemap
     {

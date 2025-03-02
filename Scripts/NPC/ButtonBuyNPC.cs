@@ -14,10 +14,10 @@ public class ButtonBuyNPC : MonoBehaviour
         PanelBuyItem.AmountBuy(Item);
         PanelBuyItem.IconItem.sprite = Item.Icon;
         PanelBuyItem.NameItem.text = Item.NameItem;
-        PanelBuyItem.Price.text = $"Стоимость товара: {Item.Price} {PanelBuyItem.CurrencyCode[Convert.ToInt32(Item.Coin)]}";
+        PanelBuyItem.Price.text = $"РЎС‚РѕРёРјРѕСЃС‚СЊ С‚РѕРІР°СЂР°: {Item.Price} {PanelBuyItem.CurrencyCode[Convert.ToInt32(Item.Coin)]}";
         PanelBuyItem.Amount.text = Item.Count.ToString();
         PanelBuyItem.Amount.color = Color.black;
-        PanelBuyItem.TotalPrice.text = $"Итоговая стоимость: {Item.Price} {PanelBuyItem.CurrencyCode[Convert.ToInt32(Item.Coin)]}"; 
+        PanelBuyItem.TotalPrice.text = $"РС‚РѕРіРѕРІР°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ: {Item.Price} {PanelBuyItem.CurrencyCode[Convert.ToInt32(Item.Coin)]}"; 
         PanelBuyItem.gameObject.SetActive(true);
     }
 

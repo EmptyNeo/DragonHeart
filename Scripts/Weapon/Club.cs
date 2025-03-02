@@ -24,6 +24,7 @@ public class Club : ComboAttacked, ISpecialAttack
                 if (enemy_collider[i].gameObject.TryGetComponent(out DamageHandlerEnemy enemy))
                 {
                     enemy.TakeDamage(Damage);
+                    ShakeCamera.Do(0.2f);
                     Debug.Log("Take from " + enemy.name);
                 }
             }
@@ -43,6 +44,7 @@ public class Club : ComboAttacked, ISpecialAttack
                 if (enemy_collider[i].gameObject.TryGetComponent(out DamageHandlerEnemy enemy))
                 {
                     enemy.TakeDamage(Damage);
+                    ShakeCamera.Do(0.1f);
                     Debug.Log("Take from " + enemy.name);
                 }
             }

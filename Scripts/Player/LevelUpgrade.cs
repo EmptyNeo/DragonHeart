@@ -159,8 +159,8 @@ public class LevelUpgrade : MonoBehaviour
         if (int.TryParse(_character[3].text, out int endurance))
             Endurance = endurance;
         _characteristics.MaxEndurance = (Endurance * 50 / 100) + 5;
-        _characteristics.Speed = (Endurance * 5 / 100) + 5;
-        _characteristics.SpeedBoost = (Endurance * 1.5f / 100) + _characteristics.Speed + 2.5f;
+        _characteristics.Speed = (Endurance * 5 / 100) + _characteristics.BaseSpeed;
+        _characteristics.SpeedBoost = (Endurance * 1.5f / 100) + _characteristics.Speed * 1.5f;
 
         if (int.TryParse(_character[4].text, out int craft))
             Craft = craft;

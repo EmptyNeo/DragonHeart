@@ -21,6 +21,8 @@ public class PlayerAttack : ComboAttacked
         }
     }
 
+    public bool Attack => _attack;
+
     private void Update()
     {
         
@@ -92,7 +94,6 @@ public class PlayerAttack : ComboAttacked
             _player.Rigidbody2D.linearVelocity = Vector2.zero;
             _animator.SetBool("IsMove", false);
             _animator.SetBool(Weapon.NameAttack, true);
-        
         }
     }
     public virtual void AttackAnimOff()

@@ -103,8 +103,8 @@ public class PlayerDataSaveLoad : MonoBehaviour
         float max_health = (_level_upgrade.Health * 150 / 100) + 10;
         float max_mana = _level_upgrade.Mana * 150 / 100;
         float max_endurance = (_level_upgrade.Endurance * 50 / 100) + 5;
-        float speed = (_level_upgrade.Endurance * 5 / 100) + 5;
-        float speed_boost = (_level_upgrade.Endurance * 1.5f / 100) + speed + 2.5f;
+        float speed = (_level_upgrade.Endurance * 5 / 100) + _characteristics.BaseSpeed;
+        float speed_boost = (_level_upgrade.Endurance * 1.5f / 100) + speed * 1.5f;
 
         _characteristics.Initialization(max_health, max_mana, max_endurance, speed, speed_boost);
         _characteristics.InitializationText();

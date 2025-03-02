@@ -12,7 +12,8 @@ public class Characteristics : MonoBehaviour
                   _speed,
                   _speed_boost,
                   _health,
-                  _mana;
+                  _mana,
+                  _base_speed = 5f;
 
     [SerializeField]
     private TextMeshProUGUI _text_health,
@@ -44,6 +45,7 @@ public class Characteristics : MonoBehaviour
     public float Endurance { get => _endurance; private set => _endurance = value; }
     public float Speed { get => _speed; set => _speed = value; }
     public float SpeedBoost { get => _speed_boost; set => _speed_boost = value; }
+    public float BaseSpeed => _base_speed;
     public int TotalPhysicalProtection => _total_physical_protection;
     public int TotalMagicProtection => _total_magic_protection;
     public float Health
@@ -141,6 +143,7 @@ public class Characteristics : MonoBehaviour
         Health -= amount;
         HealthBar.fillAmount = Health / MaxHealth;
         TextHealth.text = Health.ToString(_format) + "/" + MaxHealth;
+        
     }
     public void TakeHealth(float amount)
     {

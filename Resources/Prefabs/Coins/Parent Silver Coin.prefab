@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _amount: 1
-  _speed: 5
+  _speed: 15
   _coin_id: 1
 --- !u!58 &2618872348984561132
 CircleCollider2D:

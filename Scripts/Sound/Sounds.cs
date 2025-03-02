@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Sounds : MonoBehaviour
@@ -16,7 +15,6 @@ public class Sounds : MonoBehaviour
       {
           if (sound.clip == null)
           {
-              sound.clip = clip;
               sound.pitch = p;
               sound.PlayOneShot(clip, volume);
               sound.clip = null;

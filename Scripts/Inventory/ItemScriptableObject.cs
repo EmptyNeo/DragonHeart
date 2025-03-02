@@ -7,7 +7,7 @@ public abstract class ItemScriptableObject : ScriptableObject
 
     [SerializeField] private string _name_item;
     [SerializeField] private int _maximum_amount;
-    [Header("Магазин")]
+    [Header("")]
     [SerializeField] private int _count;
     [SerializeField] private int _price;
     [SerializeField] private TypeCoin _coin;

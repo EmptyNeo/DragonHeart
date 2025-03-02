@@ -7,7 +7,8 @@ public abstract class NPC : MonoBehaviour
     [SerializeField] private TMP_Text _name; 
     [SerializeField] private string _nameValue;
     [SerializeField] private GameObject panel;
-
+    public TMP_Text Name => _name;
+    public string NameValue => _nameValue;
     private void Start()
     {
         _name.text = _nameValue;
