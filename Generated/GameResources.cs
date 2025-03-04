@@ -122,6 +122,7 @@ public static class GameResources
         {
             public static Image Prefab_Quest_Info => Resources.Load<Image>("Prefabs/Quest/Prefab Quest Info");
         }
+        public static GameObject Anvil => Resources.Load<GameObject>("Prefabs/Anvil");
         public static Vanishing Area_Crack => Resources.Load<Vanishing>("Prefabs/Area Crack");
         public static CanvasScaler Health => Resources.Load<CanvasScaler>("Prefabs/Health");
         public static Image Panel_Info_Save => Resources.Load<Image>("Prefabs/Panel Info Save");
@@ -130,10 +131,14 @@ public static class GameResources
     }
     public static class Sounds
     {
+        public static AudioClip EatApple => Resources.Load<AudioClip>("Sounds/EatApple");
+        public static AudioClip ShootFromBow => Resources.Load<AudioClip>("Sounds/ShootFromBow");
         public static AudioClip StepPlayer1 => Resources.Load<AudioClip>("Sounds/StepPlayer1");
         public static AudioClip StepPlayer2 => Resources.Load<AudioClip>("Sounds/StepPlayer2");
         public static AudioClip StepPlayer3 => Resources.Load<AudioClip>("Sounds/StepPlayer3");
+        public static AudioClip TakeItem => Resources.Load<AudioClip>("Sounds/TakeItem");
         public static AudioClip TakeMoney => Resources.Load<AudioClip>("Sounds/TakeMoney");
+        public static AudioClip TensionOfTheBowstring => Resources.Load<AudioClip>("Sounds/TensionOfTheBowstring");
         public static AudioClip WooshSword => Resources.Load<AudioClip>("Sounds/WooshSword");
     }
     public static class Tilemap

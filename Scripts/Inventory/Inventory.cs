@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-
+    
     [SerializeField] private Transform inventoryPanel;
     [SerializeField] private Transform QuickSlotPanel;
     [SerializeField] private Transform equipment;
@@ -58,11 +58,15 @@ public class Inventory : MonoBehaviour
                 _info_take_item.AddItemInList(items[i].ItemObject, items[i].Amount);
                 Destroy(items[i].gameObject);
             }
-            if(_info_take_item.WasAnimationPlayed == false && items.Count > 0)
+            if(items.Count > 0)
             {
-                _info_take_item.UpdateInfo();
-                _info_take_item.gameObject.SetActive(true);
-                _info_take_item.WasAnimationPlayed = true;
+                Sounds.Play(GameResources.Sounds.TakeItem, 0.05f, 1.3f);
+                if (_info_take_item.WasAnimationPlayed == false)
+                {
+                    _info_take_item.UpdateInfo();
+                    _info_take_item.gameObject.SetActive(true);
+                    _info_take_item.WasAnimationPlayed = true;
+                }
             }
         }
       
@@ -118,7 +122,7 @@ public class Inventory : MonoBehaviour
         }
         if (allFull)
         {
-            Notification.Instance.SetNotification("Инвентарь заполнен!");
+            Notification.Instance.SetNotification(TextMessages.InventoryIsFull);
             Notification.Instance.TurnBackground(true);
             StartCoroutine(Notification.Instance.TurnOffBackgroundOverTime(3));
             Instantiate(_item.ItemPrefab, new Vector2(player.transform.position.x, player.transform.position.y), Quaternion.identity).GetComponent<Item>().Initialization(_amount);

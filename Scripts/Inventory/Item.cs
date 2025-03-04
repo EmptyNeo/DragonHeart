@@ -10,8 +10,11 @@ public class Item : Quantity
     [SerializeField] private ItemScriptableObject _item;
     private Vector3 _original_position;
     public ItemScriptableObject ItemObject => _item;
-    private void Start()
+    public GameObject Shadow => _shadow;
+    public void Start()
     {
+        if(transform.parent != null)
+            _shadow.SetActive(false);
         _original_position = transform.position;
         if(_amount > _item.MaximumAmount)
         {

@@ -25,3 +25,4 @@ MonoBehaviour:
   _weapon_item: {fileID: 0}
   _armor_item: {fileID: 0}
   _change_characteristics: 1
+  _audioClip: {fileID: 8300000, guid: d5c4590cb8c83fd42905a2da31c2d675, type: 3}

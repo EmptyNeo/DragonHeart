@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _amount: 1
+  _shadow: {fileID: 3130129403071310961}
   _item: {fileID: 11400000, guid: 23bececd275d6b74fbab4ad173d8f405, type: 2}
 --- !u!212 &9112722836336920899
 SpriteRenderer:

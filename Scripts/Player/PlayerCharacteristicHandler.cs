@@ -23,11 +23,14 @@ public class PlayerAttributeHandler : MonoBehaviour
         {
             _player.Animator.SetBool("UseItem", true);
             IsPlayingAnimationUseConsumableItem = true;
-            if (_quick_slot_inventory.gameObject.transform.GetChild(_quick_slot_inventory.CurrentQuickSlotId).GetComponent<InventorySlot>().Item != null)
+            ItemScriptableObject itemScriptableObject = _quick_slot_inventory.gameObject.transform
+                .GetChild(_quick_slot_inventory.CurrentQuickSlotId).GetComponent<InventorySlot>().Item;
+            if (itemScriptableObject != null)
             {
-                _consumable_item.sprite = _quick_slot_inventory.gameObject.transform.
-                                          GetChild(_quick_slot_inventory.CurrentQuickSlotId).
-                                          GetComponent<InventorySlot>().Item.ItemPrefab.
+                if(itemScriptableObject.MainItem.AudioClip != null)
+                    Sounds.Play(itemScriptableObject.MainItem.AudioClip);
+                
+                _consumable_item.sprite = itemScriptableObject.ItemPrefab.
                                           GetComponent<SpriteRenderer>().sprite;
             }
             else 

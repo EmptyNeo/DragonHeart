@@ -110,6 +110,7 @@ public class PlayerEquipmentHandler : MonoBehaviour
 
         weapon.enabled = true;
         Destroy(weapon.gameObject.GetComponent<SpriteRenderer>());
+        weapon.gameObject.GetComponent<Item>().Shadow.SetActive(false);
         Destroy(weapon.gameObject.GetComponent<Item>());
         Destroy(weapon.gameObject.GetComponent<CircleCollider2D>());
         slot.transform.GetChild(0).GetComponent<DragAndDropItem>().ExchangeSlotData(_slot_weapon);
@@ -239,6 +240,7 @@ public class PlayerEquipmentHandler : MonoBehaviour
         weapon.Initialization(item.WeaponItem.Delay, item.WeaponItem.Damage + _player_attack.Damage);
 
         Destroy(weapon.gameObject.GetComponent<SpriteRenderer>());
+        weapon.gameObject.GetComponent<Item>().Shadow.SetActive(false);
         Destroy(weapon.gameObject.GetComponent<Item>());
         Destroy(weapon.gameObject.GetComponent<CircleCollider2D>());
     }

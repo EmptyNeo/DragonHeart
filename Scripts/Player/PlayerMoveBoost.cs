@@ -24,5 +24,11 @@ public class PlayerMoveBoost : MonoBehaviour
             if (Time.time - _last_time > _endurance_return_time)
                 _characteristics.AddUpEndurance(Time.deltaTime);
         }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            _characteristics.TakeHealth(1);
+            _characteristics.TakeMana(1);
+        }
     }
 }

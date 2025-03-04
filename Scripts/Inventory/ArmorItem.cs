@@ -16,8 +16,8 @@ public class ArmorItem : ItemScriptableObject
     public override string GetDescription()
     {
         return NameItem + "\n" +
-                "Когда надето: \n" +
-                "+" + PhysicalProtection + " Физ. Броня \n" +
-                "+" + MagicProtection + " Маг. Броня";
+                "РљРѕРіРґР° РЅР°РґРµС‚Рѕ: \n" +
+                "+" + PhysicalProtection + " Р¤РёР·. Р·Р°С‰РёС‚Р° \n" +
+                "+" + MagicProtection + " РњР°Рі. Р·Р°С‰РёС‚Р°";
     }
 }

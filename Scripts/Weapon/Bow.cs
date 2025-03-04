@@ -36,6 +36,7 @@ public class Bow : Distance
         else if (Input.GetMouseButtonUp(0))
         {
             AttackOff();
+            Sounds.Play(GameResources.Sounds.ShootFromBow, p:1.2f);
         }
     }
     public override void Action(Transform equipment_object, PlayerAttack _player_attack, PlayerEquipmentHandler player_equipment_handler)
@@ -51,12 +52,15 @@ public class Bow : Distance
     {
         if (_amount_arrow - 1 < 0)
         {
-            Notification.Instance.SetNotification("Нет стрел в колчане");
+            Notification.Instance.SetNotification(TextMessages.DontHaveArrow);
             Notification.Instance.TurnBackground(true);
             StartCoroutine(Notification.Instance.TurnOffBackgroundOverTime(3));
         }
         else
+        {
             base.OnAttack();
+            Sounds.Play(GameResources.Sounds.TensionOfTheBowstring);
+        }
     }
     public override IEnumerator IAttack()
     {

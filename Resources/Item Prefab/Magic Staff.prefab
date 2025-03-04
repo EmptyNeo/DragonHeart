@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6708077806498697485}
-  - component: {fileID: 7220215398905127755}
   - component: {fileID: 8280024619429961877}
   - component: {fileID: 7149692905948271973}
+  - component: {fileID: 7220215398905127755}
   - component: {fileID: 4751597902450543797}
   m_Layer: 0
   m_Name: Magic Staff
@@ -36,6 +36,41 @@ Transform:
   - {fileID: 1351283027792216534}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8280024619429961877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165595603043730592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd9051ed08cffc49bc1f0d7d96f8ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _amount: 1
+  _shadow: {fileID: 7539405789267969041}
+  _item: {fileID: 11400000, guid: 3bcf98acf933c184e91dcdda621942ae, type: 2}
+--- !u!114 &7149692905948271973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165595603043730592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eab5bde28aa2684fbace444ff62fd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delay: 0
+  _damage: 0
+  _name_attack: MagicStaffAttack
+  _circle: {fileID: 0}
+  _radius: 0
+  _pos_y: 0
+  IsDelay: 0
+  MagicAbility: {fileID: 0}
 --- !u!212 &7220215398905127755
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -91,40 +126,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8280024619429961877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165595603043730592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cd9051ed08cffc49bc1f0d7d96f8ad8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _amount: 1
-  _item: {fileID: 11400000, guid: 3bcf98acf933c184e91dcdda621942ae, type: 2}
---- !u!114 &7149692905948271973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165595603043730592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eab5bde28aa2684fbace444ff62fd22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _delay: 0
-  _damage: 0
-  _name_attack: MagicStaffAttack
-  _circle: {fileID: 0}
-  _radius: 0
-  _pos_y: 0
-  IsDelay: 0
-  MagicAbility: {fileID: 0}
 --- !u!58 &4751597902450543797
 CircleCollider2D:
   m_ObjectHideFlags: 0
