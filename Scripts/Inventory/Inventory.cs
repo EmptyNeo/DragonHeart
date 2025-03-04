@@ -60,7 +60,7 @@ public class Inventory : MonoBehaviour
             }
             if(items.Count > 0)
             {
-                Sounds.Play(GameResources.Sounds.TakeItem, 0.05f, 1.3f);
+                Sounds.Play(GameResources.Sounds.TakeItem, 0.1f, 1.3f);
                 if (_info_take_item.WasAnimationPlayed == false)
                 {
                     _info_take_item.UpdateInfo();

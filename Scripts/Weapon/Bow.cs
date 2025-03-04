@@ -36,7 +36,6 @@ public class Bow : Distance
         else if (Input.GetMouseButtonUp(0))
         {
             AttackOff();
-            Sounds.Play(GameResources.Sounds.ShootFromBow, p:1.2f);
         }
     }
     public override void Action(Transform equipment_object, PlayerAttack _player_attack, PlayerEquipmentHandler player_equipment_handler)
@@ -70,13 +69,13 @@ public class Bow : Distance
         _amount.text = (--_amount_arrow).ToString();
         try
         {
+            Sounds.Play(GameResources.Sounds.ShootFromBow, p:1.2f);
             GameObject arrow = Instantiate(_prefab_arrow);
             Vector2 direction = ((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)_point.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             arrow.transform.SetPositionAndRotation(_point.position, Quaternion.Euler(0, 0, angle - 45));
             arrow.GetComponent<Rigidbody2D>().linearVelocity = _speed * direction;
             arrow.GetComponent<Arrow>().Damage = Damage;
-
         }
         catch (Exception e)
         {
