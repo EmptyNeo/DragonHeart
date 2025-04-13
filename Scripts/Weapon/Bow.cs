@@ -63,7 +63,6 @@ public class Bow : Distance
     }
     public override IEnumerator IAttack()
     {
-
         IsDelay = true;
 
         _amount.text = (--_amount_arrow).ToString();

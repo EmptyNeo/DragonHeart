@@ -125,7 +125,8 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         //Если мышка отпущена над объектом по имени UIPanel, то...
         if (eventData.pointerCurrentRaycast.gameObject == UIPanel)
         {
-            Quantity item = Instantiate(_oldSlot.Item.ItemPrefab).GetComponent<Quantity>();
+            Item item = Instantiate(_oldSlot.Item.ItemPrefab).GetComponent<Item>();
+            item.ItemObject = _oldSlot.Item;
             item.Initialization(_oldSlot.Amount);
             item.transform.position = _player.position + Vector3.up + _player.forward;
             NullifySlotData();

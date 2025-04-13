@@ -13,16 +13,15 @@ public class WeaponItem : ItemScriptableObject
     public float Delay => delay;
     public int NecessaryCharacteristic => _necessary_characteristic;
     public int IndexNecessaryCharacteristic => Convert.ToInt32(_type_characteristic);
-    public TypeNecessaryCharacteristic TypeCharacteristic => _type_characteristic;
-    private string[] NameCharacteristic = { "Сила", "Интелект", "Выносливость" };
+    private string[] NameCharacteristic = { "РЎРёР»Р°", "РРЅС‚РµР»Р»РµРєС‚", "Р’С‹РЅРѕСЃР»РёРІРѕСЃС‚СЊ" };
     public override string GetDescription()
     {
         float speed_attack = 1 / delay;
         return  NameItem + "\n" +
-                "Когда надето: \n" +
-                "Скорость атаки: " + speed_attack + "\n" +
-                "Урон: " + damage + "\n" +
-                "Необходимо: " + NameCharacteristic[IndexNecessaryCharacteristic] + " " + NecessaryCharacteristic;
+                "РљРѕРіРґР° РЅР°РґРµС‚Рѕ: \n" +
+                "РЎРєРѕСЂРѕСЃС‚СЊ Р°С‚Р°РєРё: " + speed_attack + "\n" +
+                "РЈСЂРѕРЅ: " + damage + "\n" +
+                "РќРµРѕР±С…РѕРґРёРјРѕ: " + NameCharacteristic[IndexNecessaryCharacteristic] + " " + NecessaryCharacteristic;
 
     }
 }

@@ -9,7 +9,12 @@ public class Item : Quantity
     [SerializeField] private GameObject _shadow;
     [SerializeField] private ItemScriptableObject _item;
     private Vector3 _original_position;
-    public ItemScriptableObject ItemObject => _item;
+    public ItemScriptableObject ItemObject
+    {
+        get => _item;
+        set => _item = value;
+    }
+
     public GameObject Shadow => _shadow;
     public void Start()
     {
